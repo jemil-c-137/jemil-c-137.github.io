@@ -65,6 +65,10 @@
     background: url(../img/header-bg.png);
     background-size: cover;
     text-align: center;
+
+    @include respond(tab-small) {
+      background-position: 35%
+    }
   }
 
   &__title {
@@ -149,6 +153,8 @@
   border-bottom: 1px solid $color-primary;
   overflow: hidden;
 
+  transition: all .2s;
+
   span {
     display: inline-block;
     letter-spacing: 1px;
@@ -163,6 +169,7 @@
   span:hover {
     background-image: url(../img/gradient-bg.png);
     background-size: 130%;
+    background-position: 20%;
     -webkit-background-clip: text;
     color: transparent;
     width: fit-content;
@@ -310,7 +317,7 @@
   width: 85%;
   margin: 0 auto;
 
-  @include respond(phone) {
+  @include respond(mobile-big) {
     flex-direction: column;
   }
 
@@ -320,7 +327,7 @@
 
     position: relative;
 
-    @include respond(phone) {
+    @include respond(mobile-big) {
       width: 100%;
     }
 
@@ -345,6 +352,11 @@
     width: 50%;
     text-align: center;
     margin-top: 5rem;
+
+    @include respond(mobile-big) {
+      display: flex;
+      width: 100%;
+    }
   }
 
   &__review {
@@ -355,7 +367,8 @@
     max-width: 23.2rem;
 
     @include respond(mobile-big) {
-      font-size: 2.2rem;
+      font-size: 3.2rem;
+      line-height: 1.2;
     }
   }
 
@@ -478,9 +491,8 @@
       list-style: none;
 
       @include respond(mobile-big) {
-        display: grid;
-        grid-template-columns: repeat(2, 45%);
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
       }
     }
 
@@ -796,7 +808,7 @@
 
     &__right-frame,
     &__left-frame {
-      width: fit-content;
+      width: 100%;
 
       img {
         width: 35%;
@@ -845,6 +857,12 @@
       height: 2.7rem;
       background: url(../img/wave.png);
       margin: 1.2rem auto 0 auto;
+
+      @include respond(tab-small) {
+        width: 5rem;
+        height: 5rem;
+      }
+
     }
   }
 }
